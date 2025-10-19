@@ -16,7 +16,7 @@ export default function App() {
     setCategory(selectedCategory);
     setDifficulty(selectedDifficulty);
     try {
-      const res = await axios.get('http://localhost:5000/api/quiz', {
+      const res = await axios.get('https://quizapp-backend-01o2.onrender.com/api/quiz', {
         params: {
           category: selectedCategory,
           difficulty: selectedDifficulty,

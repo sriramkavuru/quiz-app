@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 
 export default function StartQuiz({ startQuiz }) {
-  const [category, setCategory] = useState('');
-  const [difficulty, setDifficulty] = useState('');
+  const [category, setCategory] = useState('Web Dev');
+  const [difficulty, setDifficulty] = useState('Easy');
 
   const handleStart = () => {
-    if (!category || !difficulty) {
-      alert('Please select category and difficulty!');
-      return;
-    }
     startQuiz(category, difficulty);
   };
 
@@ -20,7 +16,6 @@ export default function StartQuiz({ startQuiz }) {
       <div style={{ margin: '20px' }}>
         <label style={{ marginRight: '10px', fontWeight: 'bold' }}>Category:</label>
         <select value={category} onChange={(e) => setCategory(e.target.value)} style={{ padding: '8px', fontSize: '16px' }}>
-          <option value="">--Select Category--</option>
           <option value="Web Dev">Web Dev</option>
           <option value="Math">Math</option>
           <option value="GK">GK</option>
@@ -30,25 +25,26 @@ export default function StartQuiz({ startQuiz }) {
       <div style={{ margin: '20px' }}>
         <label style={{ marginRight: '10px', fontWeight: 'bold' }}>Difficulty:</label>
         <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)} style={{ padding: '8px', fontSize: '16px' }}>
-          <option value="">--Select Difficulty--</option>
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
         </select>
       </div>
 
-      <button onClick={handleStart} style={{
-        padding: '12px 25px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        backgroundColor: '#4caf50',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '8px',
-        transition: '0.3s'
-      }}
-      onMouseOver={e => e.target.style.backgroundColor='#45a049'}
-      onMouseOut={e => e.target.style.backgroundColor='#4caf50'}
+      <button
+        onClick={handleStart}
+        style={{
+          padding: '12px 25px',
+          fontSize: '16px',
+          cursor: 'pointer',
+          backgroundColor: '#4caf50',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '8px',
+          transition: '0.3s'
+        }}
+        onMouseOver={e => e.target.style.backgroundColor = '#45a049'}
+        onMouseOut={e => e.target.style.backgroundColor = '#4caf50'}
       >
         Start Quiz
       </button>

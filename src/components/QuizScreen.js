@@ -25,7 +25,7 @@ export default function QuizScreen({ questions, finishQuiz }) {
   };
 
   const q = questions[current];
-  const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+  const shuffledOptions = q.options ? [...q.options].sort(() => Math.random() - 0.5) : [];
   const progressPercent = ((current + 1) / questions.length) * 100;
 
   return (
